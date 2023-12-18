@@ -7,7 +7,7 @@ import { RiArrowLeftDoubleLine } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import { GoHomeFill, GoHome } from "react-icons/go";
 import { useLocation } from 'react-router-dom';
-import { FcDataConfiguration } from "react-icons/fc";
+import { TiCloudStorageOutline, TiCloudStorage } from "react-icons/ti";
 import { IoLockClosedOutline, IoLockClosed } from "react-icons/io5";
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 
@@ -38,8 +38,8 @@ const sidebarItems: SideNavItemsType[] = [
         href: "/configuration",
         label: "Configuration",
         icons: {
-            fillIcon: <FcDataConfiguration />,
-            icon: <FcDataConfiguration />
+            fillIcon: <TiCloudStorage />,
+            icon: <TiCloudStorageOutline />
         }
     },
     {
@@ -58,13 +58,14 @@ export default function Sidebar(){
     return(
         <div className="items-center">
             <div className={cn(
-                "min-h-screen max-h-screen overflow-y-auto w-fit md:pr-2 pr-3 pt-2 flex flex-col gap-3 border-r-[3px] pl-[20px]",
+                "min-h-screen max-h-screen overflow-y-auto w-fit md:w-[100px] flex flex-col gap-3 border-r-[3px] pl-[20px]",
                 isSidebarOpen && "md:w-[300px]"
                 )}>
                 <HoverContainer>
-                    <div className="p-1 pb-2 flex justify-between ">
-                        <button>                           
-                            <IoMdSnow className='text-7xl ' /> 
+                    <div>
+                        <button className="flex items-center">                           
+                            <IoMdSnow className={cn("text-7xl", !isSidebarOpen && "w-10 text-7xl justify-start")} /> 
+                            <label className={cn(!isSidebarOpen && "invisible")}>Cool & Co.Founder</label>
                         </button>
                     </div>
                 </HoverContainer>
@@ -87,7 +88,7 @@ export default function Sidebar(){
                         <RiArrowLeftDoubleLine
                         onClick={()=>setSidebarOpen(!isSidebarOpen)}
                         className={cn(
-                            'text-gray-400 transition-all text-4xl items-center', !isSidebarOpen && 'rotate-180'
+                            'text-gray-400 transition-all text-3xl items-center', !isSidebarOpen && 'rotate-180'
                             )} 
                         />
                     </HoverContainer> 
@@ -133,6 +134,6 @@ function HoverContainer({
         className?: string;
     }){
         return <div className={
-            "p-3 transition-all rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-zinc-900 group-hover:dark:bg-zinc-900 group-hover:bg-gray-200"}>
+            "p-2 transition-all rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-zinc-900 group-hover:dark:bg-zinc-900 group-hover:bg-gray-200"}>
                 {children}</div>;
     }
