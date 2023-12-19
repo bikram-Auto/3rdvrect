@@ -58,14 +58,14 @@ export default function Sidebar(){
     return(
         <div className="items-center">
             <div className={cn(
-                "min-h-screen max-h-screen overflow-y-auto w-fit md:w-[100px] flex flex-col gap-3 border-r-[3px] pl-[20px]",
+                "min-h-screen max-h-screen overflow-y-auto w-fit md:w-[100px] flex flex-col gap-3 border-r-[3px] pl-[20px] overflow-hidden",
                 isSidebarOpen && "md:w-[300px]"
                 )}>
                 <HoverContainer>
                     <div>
-                        <button className="flex items-center">                           
-                            <IoMdSnow className={cn("text-7xl", !isSidebarOpen && "w-10 text-7xl justify-start")} /> 
-                            <label className={cn(!isSidebarOpen && "invisible")}>Cool & Co.Founder</label>
+                        <button className="flex items-center ml-[-8px]">                           
+                            <IoMdSnow className={cn("animate-spin-slow md:w-[100px] text-7xl ml-[-9px]", !isSidebarOpen && "text-7xl ml-[-9px]")}/> 
+                            <label className={cn("font-bold",!isSidebarOpen && "invisible")}> Cool & Co.Founder</label>
                         </button>
                     </div>
                 </HoverContainer>
@@ -87,8 +87,8 @@ export default function Sidebar(){
                     <HoverContainer>
                         <RiArrowLeftDoubleLine
                         onClick={()=>setSidebarOpen(!isSidebarOpen)}
-                        className={cn(
-                            'text-gray-400 transition-all text-3xl items-center', !isSidebarOpen && 'rotate-180'
+                        className={
+                            cn('text-gray-400 transition-all text-3xl items-center', !isSidebarOpen && 'rotate-180'
                             )} 
                         />
                     </HoverContainer> 
@@ -111,7 +111,7 @@ function SideNavItems({
     return (
         <Link ref={animationParent} to={href} className='flex gap-2 items-center cursor-pointer'>
             {/* icon */}
-            <div className='w-[35px] h-[35px] text-3xl'>           
+            <div className='w-[35px] h-[35px] text-3xl '>           
                 {isActivePage ? icons?.fillIcon : icons?.icon}           
             </div>
             {/* lebel */}
