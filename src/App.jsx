@@ -11,12 +11,12 @@ export default function App() {
 
   return (
    <main className='flex dark:text-white
-   dark:bg-black'>
+   dark:bg-zinc-800'>
       <ThemeProvider attribute="class">
         <Sidebar/>
-          <div className="flex min-h-screen min-w-fit items-start justify-end ml-[75%] mt-[23px]"> 
+          <div className="flex min-h-screen min-w-fit items-start justify-end ml-[90%] mt-[23px] fixed"> 
             <ToggleThemeBtn/>  
-            <div className="ml-[-105px] mt-[-1px]">Theme:</div>
+            <div className="ml-[-90px] mt-[-1px]">Dark:</div>
           </div>
           
       </ThemeProvider>
