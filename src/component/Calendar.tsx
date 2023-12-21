@@ -31,9 +31,6 @@ const CalendarItem: React.FC = () => {
             setCalDate(value[0]);
         }
     };
-    
-    
-    
 
     const onEventDescriptionChange = (event: ChangeEvent<HTMLInputElement>) => {
         setEventDescription(event.target.value);
@@ -81,9 +78,9 @@ const CalendarItem: React.FC = () => {
                     {events.map((event) => (
                         <div key={event.id}>
                             <p>Date: {event.date.toLocaleDateString()}</p>
-                            <p>Description: {event.description}</p>
+                            <p>Event: {event.description}</p>
                             <button type='button' 
-                            className="text-gray-900 hover:text-white border border-red-900 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+                            className="text-gray-900 hover:text-white border border-red-900 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
                             onClick={() => deleteEvent(event.id)}>X
                             </button>
                         </div>
@@ -95,3 +92,4 @@ const CalendarItem: React.FC = () => {
 };
 
 export default CalendarItem;
+
