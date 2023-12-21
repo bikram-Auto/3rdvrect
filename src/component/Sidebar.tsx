@@ -54,7 +54,7 @@ const sidebarItems: SideNavItemsType[] = [
 ]
 
 export default function Sidebar(){
-    const [isSidebarOpen, setSidebarOpen] = useState(true);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     return(
         <div className="items-center z-10">
             
@@ -154,4 +154,3 @@ function HoverContainer({
                 {children}</div>;
     }
 
-    // className='flex gap-2 items-center cursor-pointer'
