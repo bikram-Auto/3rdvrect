@@ -6,7 +6,6 @@ function Layout() {
   return (
     <>
     <ThemeProvider>   
-
      <div className="flex relative">
       <Sidebar/>
       <Outlet />
