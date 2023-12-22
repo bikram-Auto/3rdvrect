@@ -54,17 +54,17 @@ const sidebarItems: SideNavItemsType[] = [
 ]
 
 export default function Sidebar(){
-    const [isSidebarOpen, setSidebarOpen] = useState(true);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     return(
         <div className="items-center z-10">
             
             <div>
                 <ToggleThemeBtn/>
             </div>
-            <div className="md:w-[100px] fixed">
+            <div className=" bg-white ">
                 <div className={cn(
                     "min-h-screen max-h-screen absolute overflow-y-auto w-fit md:w-[100px] flex flex-col gap-3 border-r-[3px] pl-[20px] overflow-hidden",
-                    isSidebarOpen && "md:w-[300px] shadow md:shadow-lg"
+                    isSidebarOpen && "md:w-[300px] shadow"
                     )}>
                     <HoverContainer>
                         <div>
@@ -154,4 +154,3 @@ function HoverContainer({
                 {children}</div>;
     }
 
-    // className='flex gap-2 items-center cursor-pointer'
