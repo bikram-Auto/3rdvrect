@@ -61,7 +61,7 @@ export default function Sidebar(){
             <div>
                 <ToggleThemeBtn/>
             </div>
-            <div className="md:w-[100px] bg-white fixed">
+            <div className=" bg-white ">
                 <div className={cn(
                     "min-h-screen max-h-screen absolute overflow-y-auto w-fit md:w-[100px] flex flex-col gap-3 border-r-[3px] pl-[20px] overflow-hidden",
                     isSidebarOpen && "md:w-[300px] shadow"
